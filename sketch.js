@@ -23,7 +23,7 @@ function draw() {
 
 function changeSketch() {
 
-    if (frameCount % (frameR * 10) === 0) {
+    if (frameCount % (frameR * 14) === 0) {
         currentSketchIndex++;
         currentSketchIndex %= NUM_SKETCHES;
 
