@@ -2,34 +2,39 @@ const NUM_SKETCHES = 20;
 const sketches = [];
 let frameR = 60;
 let currentSketch;
-let currentSketchIndex = 12;
+let currentSketchIndex = 17;
 let sketch3D;
 
+let scaleNum = 2;
+
 function setup() {
-    let canvas = createCanvas(500, 500);
+    let canvas = createCanvas(500*scaleNum, 500*scaleNum);
     canvas.parent('sketch-holder');
+
+    sketch3D = new Sketch_09();
+    sketch3D.hide();
+
     setSketch();
+
 }
 
 function draw() {
     frameRate(frameR);
-
+    
     if (currentSketch) {
         currentSketch.display();
     }
-
     changeSketch();
 }
 
 function changeSketch() {
 
     if (frameCount % (frameR * 14) === 0) {
-        currentSketchIndex++;
-        currentSketchIndex %= NUM_SKETCHES;
-
-        setSketch();
+        sketchForward();
     }
 }
+
+
 
 function setSketch() {
     switch (currentSketchIndex) {
@@ -62,11 +67,12 @@ function setSketch() {
             break;
         case 9:
             currentSketch = null;
-            sketch3D = new Sketch_09();
+            // sketch3D = new Sketch_09();
+            sketch3D.show();
             break;
         case 10:
+            sketch3D.hide();
             currentSketch = new Sketch_10();
-            sketch3D = null;
             break;
         case 11:
             currentSketch = new Sketch_11();
@@ -109,4 +115,27 @@ function mousePressed() {
     if (currentSketch) {
         currentSketch.mouse();
     }
+}
+
+function keyPressed() {
+    if (keyCode == RIGHT_ARROW) {
+        sketchForward();
+    }
+    else if (keyCode == LEFT_ARROW) {
+        sketchBackward();
+    }
+}
+
+function sketchForward() {
+    currentSketchIndex++;
+    currentSketchIndex %= NUM_SKETCHES;
+    setSketch();
+}
+
+function sketchBackward() {
+    currentSketchIndex--;
+    if (currentSketch < 0) {
+        currentSketch = NUM_SKETCHES-1;
+    }
+    setSketch();
 }

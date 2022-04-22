@@ -11,6 +11,8 @@ class Sketch_00 extends CTSketch {
     }
 
     display() {
+        push();
+        scale(scaleNum);
         frameRate(10);
         // background(200);
         for (let x = 0; x < 12; x++) {
@@ -34,5 +36,6 @@ class Sketch_00 extends CTSketch {
 
             }
         }
+        pop();
     }
 }

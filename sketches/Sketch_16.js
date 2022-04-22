@@ -11,12 +11,14 @@ class Sketch_16 extends CTSketch {
     }
 
     display() {
+        push();
+        scale(scaleNum);
         noFill();
         function shade() {
             let black = color(0, 0, 0);
             let red = color(252, 3, 3);
             fill(lerpColor(red, black, .9));
-            rect(0, 0, 700, 700);
+            rect(0, 0, width, 700);
         }
 
         shade();
@@ -36,11 +38,11 @@ class Sketch_16 extends CTSketch {
 
         stroke(252, 184, 227);
         fill(252, 184, 227);
-        rect(0, 166, 700, 100);
+        rect(0, 166, width, 100);
 
         stroke(255, 255, 255);
         fill(255, 255, 255);
-        rect(0, 240, 700, 70);
+        rect(0, 240, width, 70);
 
         let r = random(255)
         let g = random(255);
@@ -111,6 +113,7 @@ class Sketch_16 extends CTSketch {
         // strokeWeight(4);
         // fill(252,3,3);
         // rect(100,50,200,100,70);
+        pop();
     }
 
 

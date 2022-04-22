@@ -11,8 +11,6 @@ class Sketch_17 extends CTSketch {
     }
 
     display() {
-        push();
-        scale(scaleNum);
         background(99, 153, 194, 5);
         noFill();
 
@@ -34,20 +32,20 @@ class Sketch_17 extends CTSketch {
         //earth
         fill(69, 40, 23)
         stroke(random(255), 0, 0);
-        ellipse(width/scaleNum, 500, 1500, 500);
+        ellipse(width, 500, 1500, 500);
 
         //mountain
         fill(31, 66, 36);
         stroke(0, random(255), 0);
-        triangle(0, height/scaleNum, 50, 200, 100, height/scaleNum);
+        triangle(0, height, 50, 200, 100, height);
 
         //mpuntain
         fill(24, 38, 26);
-        triangle(50, height/scaleNum, 70, 150, 150, height/scaleNum);
+        triangle(50, height, 70, 150, 150, height);
 
         //mountain
         fill(14, 20, 15)
-        triangle(100, height/scaleNum, 110, 100, 200, height/scaleNum)
+        triangle(100, height, 110, 100, 200, height)
 
         //arc(50, 55, 80, 80, PI + QUARTER_PI, TWO_PI);
         //fill(99,153,194);
@@ -58,7 +56,7 @@ class Sketch_17 extends CTSketch {
                 strokeWeight(10);
                 stroke(0, random(255), random(255));
                 fill(0, 118, 191)
-                ellipse(300, height/scaleNum - 5, random(490), random(80));
+                ellipse(300, windowHeight - 5, random(490), random(80));
             }
         }
 
@@ -106,7 +104,6 @@ class Sketch_17 extends CTSketch {
             text('☀️', mouseX + r1, mouseY + r2)
         }
 
-        pop();
     }
 
 

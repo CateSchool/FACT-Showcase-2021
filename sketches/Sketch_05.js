@@ -12,7 +12,7 @@ class Sketch_05 extends CTSketch {
 
     display() {
         background(0);
-        for (let i = -100; i < 100; i++) {
+        for (let i = -100; i < 100*scaleNum; i++) {
 
             let r = random(255, 3, 5);
             noFill();

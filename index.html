@@ -6,22 +6,33 @@
     <meta name="viewport" content="width=device-width">
     <title>FA Computational Thinking 2021</title>
     <style>
+        body,
+        html {
+            height: 100vh;
+            width: 100vw;
+        }
+
         body {
             margin: 0;
-
         }
 
         .container {
-            margin: auto;
-            margin-top: 30px;
+            /* margin: auto; */
+            /* margin-top: 30px; */
             display: flex;
-            flex-direction: column;
-
-            width: 500px;
+            height: 100%;
+            /* width: 500px; */
             /* This centers our sketch horizontally. */
             justify-content: center;
             /* This centers our sketch vertically. */
             align-items: center;
+            text-align: center;
+        }
+
+        .sketchContainer {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
 
         #studentName {
@@ -33,9 +44,11 @@
 
 <body>
     <div class="container">
-        <h1 id="stuentName"></h1>
-        <div id="sketch-holder"></div>
-        <div id="sketch-holder2"></div>
+        <div class="sketchContainer">
+            <h1 id="stuentName"></h1>
+            <div id="sketch-holder"></div>
+            <div id="sketch-holder2"></div>
+        </div>
     </div>
     <script src="sketches/CTSketch.js"></script>
     <script src="sketches/CTSketch3D.js"></script>

@@ -16,7 +16,7 @@ class Sketch_04 extends CTSketch {
           for (let y = 0; y < 10; y++) {
             for (let r = 0; r < 10; r++){
               fill(25 * x,25 * y,random(255));
-              ellipse((width/10) * x,(height/10) * y,(mouseX)-width/2,(mouseY)-height/2);
+              ellipse((width/10) * x+width/10/2,(height/10) * y,(mouseX)-width/2,(mouseY)-height/2);
             }
           }   
         } 

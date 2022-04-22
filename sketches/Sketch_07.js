@@ -12,6 +12,8 @@ class Sketch_07 extends CTSketch {
 
     //code source: Christopher Reyes
     display() {
+        push();
+        scale(scaleNum);
         var backgroundR = 209
         var backgroundG = 153
         var backgroundB = 198
@@ -145,7 +147,7 @@ class Sketch_07 extends CTSketch {
         ellipse(mouseX - 20, 200, 30, 30);
         ellipse(mouseX + 7, 190, 30, 30);
         ellipse(mouseX + 20, 198, 30, 30);
-
+pop ();
     }
 
 

@@ -1,6 +1,6 @@
 
 
-class Sketch_09 extends CTSketch3D  {
+class Sketch_09 extends CTSketch3D {
 
     constructor() {
         super("Daisy Gemberling", 9);
@@ -8,22 +8,38 @@ class Sketch_09 extends CTSketch3D  {
         this.start3D();
     }
 
+    hide() {
+        let h = select('#sketch-holder');
+        h.style('display', 'block');
+
+        let h2 = select('#sketch-holder2');
+        h2.style('display', 'none');
+        
+    }
+
+    show() {
+        let h = select('#sketch-holder2');
+        h.style('display', 'block');
+
+        let h2 = select('#sketch-holder');
+        h2.style('display', 'none');
+
+        select("#stuentName").html(this.student);
+    }
+
     start3D() {
-        new p5 (function (p) {
+        new p5(function (p) {
             let x = 100;
             let y = 100;
-        
+
             p.setup = function () {
-                let canvas =  p.createCanvas(500, 500, WEBGL);
+                let canvas = p.createCanvas(500 * scaleNum, 500 * scaleNum, WEBGL);
                 canvas.parent('sketch-holder2');
-                let h = p.select('#sketch-holder');
-                console.log(h);
-                h.style('display', 'none');
+
                 p.rectMode(CENTER);
                 p.frameRate(60);
-                p.select("#stuentName").html("Daisy Gemberling");
             };
-        
+
             p.draw = function () {
                 p.noFill();
                 p.background(0);
