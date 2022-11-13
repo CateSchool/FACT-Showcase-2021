@@ -5,9 +5,10 @@ let currentSketch;
 let currentSketchIndex = 17;
 let sketch3D;
 
-let scaleNum = 2;
+let scaleNum = 1;
 
 function setup() {
+    
     let canvas = createCanvas(500*scaleNum, 500*scaleNum);
     canvas.parent('sketch-holder');
 
